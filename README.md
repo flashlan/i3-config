@@ -1,9 +1,9 @@
 # i3wm configuration files
 
-I use Debian GNU/Linux.
+I use Arch GNU/Linux.
 ```
 $i3 --version
-i3 version 4.16.1 (2019-01-27) © 2009 Michael Stapelberg and contributors
+i3 version 4.18 (2020-02-17) © 2009 Michael Stapelberg and contributors
 ```
 ## Features
 
@@ -16,9 +16,9 @@ i3 version 4.16.1 (2019-01-27) © 2009 Michael Stapelberg and contributors
 
 ## Setups
 ```
-git clone https://github.com/TxGVNN/i3-config.git ~/.i3
+git clone https://github.com/flashlan/i3-config.git ~/.i3
 ```
-Don't forget setup the `Xresources` file. If you expect more dotfiles, you can have a look in [TxGVNN/dots](https://github.com/TxGVNN/dots.git)
+Don't forget setup the `Xresources` file. If you expect more dotfiles,
 
 ## Bindings
 * <kbd>Super</kbd>+<kbd>Enter</kbd> Open terminal
@@ -57,17 +57,13 @@ Don't forget setup the `Xresources` file. If you expect more dotfiles, you can h
 
 - master - As v4 but removing conky package (use i3blocks in status bar)
 
-- v4
-![v4](https://user-images.githubusercontent.com/9713793/48619359-d4f28b00-e9ce-11e8-806c-95d349fcc7d5.png)
+It is a fork from https://github.com/TxGVNN/i3-config
 
-- v3
-![v3](https://user-images.githubusercontent.com/9713793/46845799-325f4f00-ce07-11e8-81f1-b184a8d49f1f.png)
+The screenshot show how my changes look like
 
-- v2
-![v2](https://user-images.githubusercontent.com/9713793/46845797-312e2200-ce07-11e8-9631-27e27c6c8678.png)
+![The screenshot show how my changes look like with the new features add:](https://raw.githubusercontent.com/flashlan/i3-config/master/desktop.png)
 
-- v1
-![v1](https://user-images.githubusercontent.com/9713793/46845798-312e2200-ce07-11e8-9ad4-58f91538aa17.png)
+
 
 ## Packages
 - required
