@@ -57,7 +57,7 @@ Don't forget setup the `Xresources` file. If you expect more dotfiles,
 
 It is a fork from https://github.com/TxGVNN/i3-config
 
-The screenshot show how my changes look like with the new features add:
+The screenshot show how my changes looks like with the new features added
 
 ![The screenshot show how my changes look like with the new features add:](https://raw.githubusercontent.com/flashlan/i3-config/master/desktop.png)
 
