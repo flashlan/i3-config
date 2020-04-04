@@ -1,7 +1,7 @@
 use_xft yes
 xftfont DejaVu Sans Mono:pixelsize=12
 xftalpha 0.1
-update_interval 10
+update_interval 20
 total_run_times 0
 background no
 
@@ -31,13 +31,27 @@ no_buffers no
 override_utf8_locale yes
 use_spacer right
 
+color1 88ABC4
+color2 7a917c
+color3 ffff00
+color4 EA6464
+color5 72D668
+
 TEXT
-${color 535C5C}
-  _____ ${color de6839} _    ${color 535C5C} __    _      _      _
-   | |  ${color de6839}\ \_/ ${color 535C5C}/ /`_ \ \  / | |\ | | |\ |
-   |_|  ${color de6839}/_/ \ ${color 535C5C}\_\_/  \_\/  |_| \| |_| \|
-${color 5a715c}
-  [ @author TxGVNN ]
-${color}
+${color d22a2a} ${color d22a2a} ${color d20054} ${color d20054}_${color d20054}_${color d20054}_${color d20054}_${color d20054} ${color d20054} ${color d20054} ${color d20054} ${color d20054} ${color d2007e} ${color d2007e} ${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e} ${color d2007e} ${color d2007e} ${color a8007e} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8}
+${color d20054} ${color d20054} ${color d20054}/${color d20054} ${color d20054}_${color d20054}_${color d20054} ${color d20054}\${color d20054}_${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e}/${color d2007e} ${color d2007e}_${color d2007e}_${color d2007e}/${color a8007e}_${color a800a8}_${color a800a8} ${color a800a8} ${color a800a8}_${color a800a8}_${color a800a8} ${color a800a8} ${color a800a8}_${color a800a8}_${color a800a8}
+${color d20054} ${color d20054}/${color d20054} ${color d20054}/${color d20054} ${color d20054}/${color d2007e} ${color d2007e}/${color d2007e} ${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e}/${color d2007e} ${color d2007e}/${color a8007e}_${color a800a8}/${color a800a8} ${color a800a8}_${color a800a8} ${color a800a8}\${color a800a8}/${color a800a8} ${color a800a8}/${color a800a8} ${color a800a8}/${color a800a8} ${color 7e00a8}/${color 7e00d2}
+${color d20054}/${color d20054} ${color d20054}/${color d2007e}_${color d2007e}/${color d2007e} ${color d2007e}/${color d2007e} ${color d2007e}/${color d2007e} ${color d2007e} ${color d2007e}/${color a8007e} ${color a800a8}_${color a800a8}_${color a800a8}/${color a800a8} ${color a800a8} ${color a800a8}_${color a800a8}_${color a800a8}/${color a800a8} ${color a800a8}/${color a800a8}_${color 7e00a8}/${color 7e00d2} ${color 7e00d2}/${color 7e00d2} ${color 7e00d2}
+${color d2007e}\${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e}_${color d2007e}/${color d2007e}_${color d2007e}/${color d2007e} ${color a8007e} ${color a800a8}/${color a800a8}_${color a800a8}/${color a800a8} ${color a800a8} ${color a800a8}\${color a800a8}_${color a800a8}_${color a800a8}_${color a800a8}/${color a800a8}\${color 7e00a8}_${color 7e00d2}_${color 7e00d2},${color 7e00d2}_${color 7e00d2}/${color 7e00d2} ${color 7e00d2} ${color 7e00d2}
+${color d2007e} ${color d2007e} ${color d2007e} ${color d2007e} ${color d2007e} ${color d2007e} ${color a8007e} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color a800a8} ${color 7e00a8} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 7e00d2} ${color 5400d2}
+${color 0054d2}[${color 0054d2} ${color 007ed2}O${color 007ed2}r${color 007ed2}f${color 007ed2}e${color 007ed2}u${color 007ed2}@${color 007ed2}A${color 007ed2}r${color 007ed2}c${color 007ea8}h${color 00a8a8} ${color 00a8a8}]${color 00a8a8}
+${color} Linux:$nodename- Kernel:$kernel 
 ${execp cat "/tmp/.${LOGNAME}_i3_daemon"}
-${texeci 1800 ~/.i3/bin/daemon > "/tmp/.${LOGNAME}_i3_daemon" 2>&1}
+${texeci 900 ~/.i3/bin/daemon > "/tmp/.${LOGNAME}_i3_daemon" 2>&1}
+${color1} USD:${color2}${texeci 900 curl -s https://economia.awesomeapi.com.br/json/usd > ~/.temp/usd.json}${exec cat ~/.temp/usd.json | jq -r '.[].high' | cut -b 1-4} ${color1}EUR:${color2}${texeci 900  curl -s https://economia.awesomeapi.com.br/json/eur > ~/.temp/eur.json}${exec cat ~/.temp/eur.json | jq -r '.[].high' | cut -b 1-4} ${color1}USDT:${color2}${texeci 900 curl -s https://economia.awesomeapi.com.br/json/usdt > ~/.temp/cotausdt.json}${exec cat ~/.temp/cotausdt.json | jq -r '.[].high'}
+${color1} BTC:${color2}${texeci 900 curl -s https://economia.awesomeapi.com.br/json/btc > ~/.temp/cotabtc.json}${exec cat ~/.temp/cotabtc.json | jq -r '.[].high'} ${color1}XRP:${color2}${texeci 900 curl -s https://economia.awesomeapi.com.br/json/xrp > ~/.temp/cotaxrp.json}${exec cat ~/.temp/cotaxrp.json | jq -r '.[].high'}${color1} ETH:${color2}${texeci 900 curl -s https://economia.awesomeapi.com.br/json/eth > ~/.temp/cotaeth.json}${exec cat ~/.temp/cotaeth.json | jq -r '.[].high'}
+${color1} XAU:${color2}${texeci 900 curl -s https://www.freeforexapi.com/api/live?pairs=USDXAU > ~/.temp/xau}${exec cat ~/.temp/xau | grep XAU | cut -b 28-35}${color1} XAG:${color2}${texeci 900 curl -s https://www.freeforexapi.com/api/live?pairs=USDXAG > ~/.temp/xag}${exec cat ~/.temp/xag | grep XAG | cut -b 28-35}
+
+${color1}| AAPL:${color4}${texeci 900 stocks AAPL > ~/.temp/aapl}${exec cat ~/.temp/aapl | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks AAPL > ~/.temp/aapl}${exec cat ~/.temp/aapl| grep + | cut -b 28-33}${color1} | TSLA:${color4}${texeci 900 stocks TSLA  > ~/.temp/tsla}${exec cat ~/.temp/tsla | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks TSLA  > ~/.temp/tsla}${exec cat ~/.temp/tsla | grep + | cut -b 28-33}${color1} | AMZN:${color4}${texeci 900 stocks AMZN > ~/.temp/amznl}${exec cat ~/.temp/amzn | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks AMZN  > ~/.temp/amzn}${exec cat ~/.temp/amzn | grep + | cut -b 28-33}${color1} |
+${color1}| BKNG:${color4}${texeci 900 stocks BKNG > ~/.temp/bkng}${exec cat ~/.temp/bkng | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks BKNG > ~/.temp/bkng}${exec cat ~/.temp/bkng | grep + | cut -b 28-33}${color1} | GOOG:${color4}${texeci 900 stocks GOOG > ~/.temp/goog}${exec cat ~/.temp/goog | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks GOOG  > ~/.temp/goog}${exec cat ~/.temp/goog | grep + | cut -b 28-33}${color1} |  AZO:${color4}${texeci 900 stocks AZO  > ~/.temp/azo}${exec cat ~/.temp/azo | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks AZO > ~/.temp/azo}${exec cat ~/.temp/azo | grep + | cut -b 28-33}${color1} |
+${color1}|  PBR:${color4}${texeci 900 stocks PBR > ~/.temp/pbr}${exec cat ~/.temp/pbr | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks PBR  > ~/.temp/pbr}${exec cat ~/.temp/pbr | grep + | cut -b 28-33}${color1} | MELI:${color4}${texeci 900 stocks MELI  > ~/.temp/meli}${exec cat ~/.temp/meli | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks MELI  > ~/.temp/meli}${exec cat ~/.temp/meli | grep + | cut -b 28-33}${color1} | VALE:${color4}${texeci 900 stocks VALE  > ~/.temp/vale}${exec cat ~/.temp/vale | grep - | grep Percent | cut -b 28-33}${color5}${texeci 900 stocks VALE > ~/.temp/vale}${exec cat ~/.temp/vale | grep + | cut -b 28-33}${color1} |

@@ -15,7 +15,7 @@ own_window_type override
 own_window_transparent yes
 
 out_to_console no
-update_interval 10
+update_interval 5
 alignment top_right
 
 override_utf8_locale yes
@@ -46,7 +46,6 @@ gap_y 40
 color1 88ABC4
 color2 7a917c
 color3 ffff00
-
 TEXT
 ${alignr}${color}${time %H:%M}@TIME *${color1}
 
@@ -54,31 +53,35 @@ ${execp cal | cat -e|  sed 's/\$/ /g ;s/_^H./\${color3}'"$(date +%e)"'${color1}/
 ${alignr}${color}DISK *${color1}
 
 ${alignr} < ${fs_used_perc /}% - ${fs_used /}/${fs_size /} > /    --+
-${alignr} < ${fs_bar 5,120 /} > --+     
+${alignr}   ${fs_bar 5,120 /}           
 ${alignr} < ${fs_used_perc /home}% - ${fs_used /home}/${fs_size /home} > /home--+
-${alignr} < ${fs_bar 5,120 /home} > --+     
+${alignr}   ${fs_bar 5,120 /home}           
 ${alignr} < $swapperc% - $swap/$swapmax > swap --+
-${alignr} < ${swapbar 5,120} > --+     
+${alignr}   ${swapbar 5,120}           
 
-${alignr}${color}HACKER NEWS *${color1}
+${alignr}${color}REDE *${color1}
 
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 0}  (1
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 1}  (2
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 2}  (3
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 3}  (4
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 4}  (5
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 5}  (6
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 6}  (7
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 7}  (8
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 8}  (9
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 9} (10
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 10} (11
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 11} (12
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 12} (13
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 13} (14
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 14} (15
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 15} (16
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 16} (17
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 17} (18
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 18} (19
-${alignr} ${rss https://news.ycombinator.com/rss 30 item_title 19} (20
+${alignr}   ${downspeed wlp10s0}Dow ${upspeed wlp10s0}Up /${alignr}${wireless_link_qual wlp10s0}% WIFI
+${alignr}   ${downspeedgraph wlp10s0 25,180 000000 000000}   
+${alignr}   ${totaldown wlp10s0}Downloaded/${totalup wlp10s0} Uploaded
+${alignr}   ${color2}${addr wlp10s0} ${color1}IP Address
+${alignr}   ${color2}${execi 400 curl icanhazip.com}$color1} Public Ip
+
+${alignr}${color}SYSTEM *${color1}
+
+${alignr}   ${acpitemp}°C /${uptime} uptime CPU
+${alignr}   ${cpugraph 25,180 000000 000000}   
+${alignr}   $mem/$memmax - $memperc%      RAM
+${alignr}   ${memgraph 25,180 000000 000000}   
+${goto 400}${color1}Proc${color}${alignr 9}${color1}${color1}Mem${color}
+${goto 400}${color2}${top_mem name 1}${color}${alignr 9}${top_mem mem_res 1}
+${goto 400}${color2}${top_mem name 2}${color}${alignr 9}${top_mem mem_res 2}
+${goto 400}${color2}${top_mem name 3}${color}${alignr 9}${top_mem mem_res 3}
+${goto 400}${color2}${top_mem name 4}${color}${alignr 9}${top_mem mem_res 4}
+
+${goto 400}${color1}Proc${color}${alignr 9}${color1}Cpu %${color}
+${goto 400}${color2}${top_mem name 1}${color}${alignr 9}${top cpu 1} %
+${goto 400}${color2}${top_mem name 2}${color}${alignr 9}${top cpu 2} %
+${goto 400}${color2}${top_mem name 3}${color}${alignr 9}${top cpu 3} %
+${goto 400}${color2}${top_mem name 4}${color}${alignr 9}${top cpu 4} %
+
