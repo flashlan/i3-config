@@ -1,4 +1,4 @@
-It is a fork from https://github.com/TxGVNN/i3-config with more improvements: systems bars, , more sensors, stock Exchange rates, gold, silver (metal) rates, e-coins rates, etc implementds with curl and  bash script over json files.
+It is a fork from https://github.com/TxGVNN/i3-config with more improvements: systems bars, more sensors, stock exchange rates, gold, silver(metal) rates, e-coins rates, etc. implementd with curl and  bash script over json files.
 
 The screenshot show how my changes looks like with the new features added --> exchange rates, hardware  resources monitoring graphs, system, coins, etc.
 
