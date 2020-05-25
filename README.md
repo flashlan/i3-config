@@ -6,7 +6,7 @@ It is a fork from https://github.com/TxGVNN/i3-config with more improvements:
 - Process list by load  by CPU and Ram consume
 - Stock exchange rates
 - Gold, Silver (metals) exchange rates
-- Coins (USD,EUR, etc) and e-coin(bitcoin, litecoin, etc rates.
+- Coins (USD,EUR, etc) and e-coin(bitcoin, litecoin, etc) rates.
  The get rates scripts are Implementd with curl and  bash script over json files.
 
 The screenshot show how my changes looks like with the new features added --> exchange rates, hardware  resources monitoring graphs, system, coins, etc.
