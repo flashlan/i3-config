@@ -1,3 +1,6 @@
+News: Updated syntax to conky version 1.10+ (Lua syntax)
+
+
 It is a fork from https://github.com/TxGVNN/i3-config with more improvements:
 - Hdd Usage Graphs
 - Network usage Graphs
